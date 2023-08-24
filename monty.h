@@ -64,6 +64,24 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct bus_s - function for doubly linked list representation
+ * @arg: the value
+ * @file: pointer to file in monty
+ * @content: the line content
+ * @livi: flag change stack <-> queue
+ * Description: the value through the program
+ */
+typedef struct bus_s
+{
+	char *arg;
+	FILE *file;
+	char *content;
+	int livi;
+} bus_t;
+
+extern bus_t bus;
+
 /* declaring protypes to be used */
 char *re_alloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t get_stdin(char **lineptr, int file);
